@@ -1,0 +1,139 @@
+.rotate-180 {
+  transform: rotate(180deg);
+  transition: all 0.25s;
+}
+
+.transition {
+  /* transform: rotate(180deg); */
+  transition: all 0.25s;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+
+.font-bold {
+  font-weight: bold;
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+
+/*=============== #Flex Utilities ==============*/
+
+.aspace-between,
+.aalign-start,
+.aalign-center,
+.aflex,
+.aspace-around,
+.ajustify-center,
+.ajustify-end {
+  display: flex;
+  flex-wrap: wrap;
+}
+.aspace-between {
+  justify-content: space-between;
+}
+
+.aspace-around{
+  justify-content: space-around;
+}
+
+.aalign-start {
+  align-items: flex-start;
+}
+.aalign-center {
+  align-items: center;
+}
+
+.ajustify-center {
+  justify-content: center;
+}
+
+.ajustify-end {
+  justify-content: flex-end;
+}
+
+.ano-wrap {
+  flex-wrap: nowrap;
+}
+.flex-grow{
+  flex-grow: 1;
+}
+.aflex-1 {
+  flex: 1;
+}
+/*=============== &Flex Utilities ==============*/
+
+/*======= #Padding ===============*/
+.pdb-0 {
+  padding-bottom: 0;
+}
+/*======= end Padding ===============*/
+
+/*======= #Margin ===============*/
+.mt-4-5 {
+  margin-top: 2rem;
+}
+
+.mrb-0 {
+  margin-bottom: 0;
+}
+/*======= end margin ===============*/
+
+.sm-show {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .sm-hide {
+    display: none;
+  }
+
+  .sm-show {
+    display: inline-block;
+  }
+
+  .sm-3 {
+    margin: 1rem;
+  }
+
+  .sml-0 {
+    margin-left: 0 !important;
+  }
+
+  .smb-3 {
+    margin-bottom: 1rem;
+  }
+
+  .smb-4 {
+    margin-bottom: 1.5rem;
+  }
+
+  .smt-3 {
+    margin-top: 1rem;
+  }
+
+  .smt-5 {
+    margin-top: 3rem;
+  }
+
+  .sd-block {
+    display: block;
+  }
+
+  .sjustify-center {
+    justify-content: center;
+  }
+  .sm-w-100 {
+    width: 100%;
+    min-width: 200px;
+  }
+}

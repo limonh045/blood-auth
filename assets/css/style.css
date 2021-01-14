@@ -1,0 +1,182 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  /* line-height: 1.67; */
+  letter-spacing: normal;
+  text-align: left;
+  color: #9c9c9c;
+  /* background-color: #fafafa; */
+  font-weight: 300;
+  line-height: 1.69;
+  background: #ebebeb;
+  color: #0c2846;
+}
+
+p {
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: #009feb;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 1.78;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 1.22;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+  line-height: 1.88;
+}
+
+h5 {
+  font-size: 14px;
+  line-height: 1.29;
+}
+
+h6 {
+  font-size: 12px;
+  line-height: 1.29;
+}
+
+label,
+.label {
+  font-size: 9px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  color: #9c9c9c;
+  display: block;
+  text-transform: capitalize;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #0c2846;
+}
+button {
+  border: none;
+}
+button:focus {
+  outline: none;
+}
+input:focus {
+  border: none;
+  outline: none;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+.custom-font{
+  font-size: 16px;
+}
+/*============ #Others ===============*/
+
+.my-card {
+  border-radius: 10px;
+  border: solid 1px #e6e6e6;
+  background-color: #ffffff;
+  min-height: 22px;
+}
+
+@media only screen and (max-width: 992px) {
+}
+/*============ End Header Navbar ===============*/
+
+/*============ #Bootstrap override ===============*/
+.btn {
+  font-size: 14px;
+}
+.form-control {
+  font-size: 14px;
+}
+.form-group {
+  margin-bottom: 0;
+}
+
+.input-group-text {
+  font-size: 14px;
+}
+
+.custom-select {
+  font-size: 14px;
+}
+/*============ End Bootstrap override ===============*/
+
+/*============ #Login register ===============*/
+.login-card {
+  max-width: 30rem;
+  width: 90%;
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: solid 1px #e6e6e6;
+  background-color: #ffffff;
+  position: relative;
+  margin-top: -107px;
+}
+
+h3.login-title {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+/*============ End login register ===============*/
+
+/*============ #Triangles ===============*/
+
+/*============ End Triangles ===============*/
+
+/*============ #Subject page ===============*/
+
+/*============ End Subject page ===============*/
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  .login-card {
+    margin-top: 0;
+  }
+}
