@@ -5,7 +5,7 @@ export const blood =[
     },
     {
         id:'2',
-        name:"AB+"
+        name:"AB-"
     },
     {
         id:'3',

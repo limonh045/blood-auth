@@ -159,10 +159,9 @@ export default {
             }
           }
         });
-        this.$nuxt.$emit("loading", false);
+      this.$nuxt.$emit("loading", false);
     },
     async registrationSubmits() {
-   
       var recaptcha = new firebase.auth.RecaptchaVerifier("recaptcha");
       let number = `'+88${this.form.number}'`;
       console.log(number);
@@ -171,7 +170,7 @@ export default {
         .signInWithPhoneNumber(number, recaptcha)
         .then(e => {
           let code = prompt("Enter Otp Number");
-          this.$nuxt.$emit('loading',true)
+          this.$nuxt.$emit("loading", true);
           e.confirm(code)
             .then(res => {
               firebase
@@ -181,25 +180,27 @@ export default {
                 .then(res => {
                   localStorage.setItem("userkey", res.key);
                   this.$router.push("/profile");
-                   $nuxt.$emit('log')
-                  
+                  $nuxt.$emit("log");
                 })
                 .catch(err => {
                   this.showDismissibleAlert = true;
                   this.errorMessageAlert = err.message;
                 });
-                this.$nuxt.$emit('loading',false)
+              this.$nuxt.$emit("loading", false);
             })
             .catch(err => {
               this.showDismissibleAlert = true;
               this.errorMessageAlert = err.message;
+              this.$nuxt.$emit("loading", false);
             });
         })
         .catch(err => {
           this.showDismissibleAlert = true;
           this.errorMessageAlert = err.message;
           recaptcha = new firebase.auth.RecaptchaVerifier("recaptcha");
+          this.$nuxt.$emit("loading", false);
         });
+      this.$nuxt.$emit("loading", false);
     }
   }
 };

@@ -24,7 +24,8 @@
               ref="blood"
             ></select-input>
           </div>
-          <my-button @click="findDonarHandelar" class="text-center" text="search blood"></my-button>
+          <nuxt-link @click="findDonarHandelar" :to='`/${form.selectedUpozila}/${form.blool}`'>okkk</nuxt-link>
+          <my-button  class="text-center" text="search blood"></my-button>
         </div>
       </div>
     </div>

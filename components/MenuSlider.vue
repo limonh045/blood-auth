@@ -5,8 +5,10 @@
         ><div class="aflex">
           <b-avatar text="BV" size="4rem"></b-avatar>
           <div class="profile-info ml-2">
-            <div class="profile-info__name">{{userInfo.name}}</div>
-            <div class="profile-info__blood--group">Blood Group {{userInfo.bloodname}}</div>
+            <div class="profile-info__name">{{ userInfo.name }}</div>
+            <div class="profile-info__blood--group">
+              Blood Group {{ userInfo.bloodname }}
+            </div>
           </div>
         </div></nuxt-link
       >
@@ -39,28 +41,28 @@
   </div>
 </template>
 <script>
-import {mapGetters} from 'vuex'
+import { mapGetters } from "vuex";
 export default {
   data: () => ({
     loginAccess: false
   }),
   mounted() {
-this.log();
+    this.$store.dispatch("getUserInfo");
+    this.log();
   },
-  created(){
-    this.$nuxt.$on('log', () => {
-     this.log();
-   })
+  created() {
+    this.$nuxt.$on("log", () => {
+      this.log();
+    });
   },
   computed: {
-    ...mapGetters(['userInfo'])
+    ...mapGetters(["userInfo"])
   },
   methods: {
-        
     loginAccessHandelar() {
       localStorage.removeItem("userkey");
       this.loginAccess = false;
-      this.$router.push('/login')
+      this.$router.push("/login");
     },
     log() {
       var userKey = localStorage.getItem("userkey");
