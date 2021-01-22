@@ -14,9 +14,7 @@ const mutations = {
 const actions = {
   async getUserInfo(b) {
     var userKey = localStorage.getItem("userkey");
-    var bloodname = "";
-    var upozilas = "";
-    var zila = "";
+ 
     $nuxt.$emit("loading", true);
     await firebase
       .database()
@@ -26,34 +24,21 @@ const actions = {
             
 
           if (element.key == userKey) {
-            blood.forEach(e => {
-              if (e.id == element.val().blool) {
-                bloodname = e.name;
-              }
-            });
-            upozila.forEach(e => {
-              if (e.id == element.val().selectedUpozila) {
-                upozilas = e.name;
-              }
-            });
-
-            districts.forEach(e => {
-              if (e.id == element.val().selectedDistrict) {
-                zila = e.name;
-              }
-            });
             b.commit("getUserInfo", {
               name: element.val().name,
               number: element.val().number,
               profilePic:element.val().profileImg,
-              upozilas,
-              zila,
-              bloodname
+              upozilas: upozila.find(e => e.id == element.val().selectedUpozila)
+                .name,
+              zila: districts.find(e => e.id == element.val().selectedDistrict)
+                .name,
+              bloodname: blood.find(e => e.id == element.val().blool).name
             });
             $nuxt.$emit("loading", false);
           }
         });
       });
+      $nuxt.$emit("loading", false);
   }
 };
 const getters = {

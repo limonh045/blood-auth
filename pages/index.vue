@@ -24,8 +24,12 @@
               ref="blood"
             ></select-input>
           </div>
-          <nuxt-link @click="findDonarHandelar" :to='`/${form.selectedUpozila}/${form.blool}`'>okkk</nuxt-link>
-          <my-button  class="text-center" text="search blood"></my-button>
+          <nuxt-link
+            class="search-blood"
+            @click="findDonarHandelar"
+            :to="`/${form.selectedUpozila}/${form.blool}`"
+            >Search Blood</nuxt-link
+          >
         </div>
       </div>
     </div>
@@ -33,20 +37,18 @@
 </template>
 
 <script>
-import MyButton from "../components/MyButton.vue";
 import { districts } from "../store/data/disrict";
 import { upozila } from "../store/data/upozila";
 import { blood } from "../store/data/blood";
 export default {
-  components: { MyButton },
   data: () => ({
     districts,
     upozila,
     blood,
     form: {
-      selectedDistrict:'',
-      selectedUpozila:'',
-      blood:''
+      selectedDistrict: "",
+      selectedUpozila: "",
+      blood: ""
     }
   }),
   computed: {
@@ -76,5 +78,20 @@ export default {
 <style>
 .home-search {
   height: 87vh;
+}
+.search-blood {
+  font-size: 16px;
+  background: #ccc;
+  padding: 10px;
+  color: black;
+  border-radius: 5px;
+  display: block;
+  margin: auto;
+  width: 145px;
+  text-align: center;
+}
+.search-blood:hover {
+  color: black;
+  text-decoration: none;
 }
 </style>

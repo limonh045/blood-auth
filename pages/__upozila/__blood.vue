@@ -12,7 +12,7 @@
           <span class="bonar-blood text-info">{{ blood.bloodname }}</span
           ><br />
           <span class="donar-address text-dark"
-            >{{ blood.upozilas }}{{ blood.zila }}</span
+            >{{ blood.upozilas }},{{ blood.zila }}</span
           >
         </td>
         <td>{{ blood.number }}</td>
@@ -33,55 +33,33 @@ export default {
     upozila,
     districts
   }),
-async  mounted() {
-    var bloodname = "";
-    var upozilas = "";
-    var zila = "";
+  async mounted() {
     this.$nuxt.$emit("loading", true);
-  await  firebase
+    await firebase
       .database()
       .ref("userInfo")
       .once("value", e => {
         e.forEach(element => {
-          // console.log(element.val());
           if (
             element.val().selectedUpozila ==
               this.$nuxt._route.params._upozila &&
             element.val().blool == this.$nuxt._route.params._blood
           ) {
-            // this.searchBlood.push(element.val());
-
-            blood.forEach(e => {
-              if (e.id == element.val().blool) {
-                bloodname = e.name;
-              }
-            });
-            upozila.forEach(e => {
-              if (e.id == element.val().selectedUpozila) {
-                upozilas = e.name;
-              }
-            });
-
-            districts.forEach(e => {
-              if (e.id == element.val().selectedDistrict) {
-                zila = e.name;
-              }
-            });
-
             this.searchBlood.push({
               name: element.val().name,
               number: element.val().number,
               profilePic: element.val().profileImg,
-              upozilas,
-              zila,
-              bloodname
+              upozilas: upozila.find(e => e.id == element.val().selectedUpozila)
+                .name,
+              zila: districts.find(e => e.id == element.val().selectedDistrict)
+                .name,
+              bloodname: blood.find(e => e.id == element.val().blool).name
             });
             $nuxt.$emit("loading", false);
-
           }
         });
 
-      this.$nuxt.$emit('loading',false)
+        this.$nuxt.$emit("loading", false);
       });
   },
   computed: {}
